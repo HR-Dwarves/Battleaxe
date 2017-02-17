@@ -56,7 +56,8 @@ class List extends React.Component {
           <button type="sumbit">Add</button>
         </form>
         {items ? Object.keys(items).map((key, ind) => <ListItem {...this.props} 
-                                                       key={key} 
+                                                       key={key}
+                                                       itemKey={key}
                                                        listItem={items[key]}/>) : []}
       </div>
     )
