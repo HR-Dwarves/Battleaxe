@@ -181,12 +181,13 @@ class NewsFeed extends React.Component {
     let loaded = this.state.loaded;
     let fiveButtonStyle = ''
     let moreButtonStyle = ''
+    let selectStyle = `${styles.select} select`
     if(this.state.numberOfPosts === '5') {
-      fiveButtonStyle = `${styles.postButton} button is-primary is-focused`;
-      moreButtonStyle = `${styles.postButton} button is-focused`;
+      fiveButtonStyle = `${styles.postButton} button is-dark`;
+      moreButtonStyle = `${styles.postButton} button`;
     } else {
-      moreButtonStyle = `${styles.postButton} button is-primary is-focused`;
-      fiveButtonStyle = `${styles.postButton} button is-focused`;
+      moreButtonStyle = `${styles.postButton} button is-dark`;
+      fiveButtonStyle = `${styles.postButton} button`;
     }
 
     //render x amount of posts
@@ -223,7 +224,7 @@ class NewsFeed extends React.Component {
           <header className={headerStyles}>
             <div className="card-header-title">
               <p className='control'>
-                <span className="select">
+                <span className={selectStyle}>
                   <select value={selectedNewsSource} onChange={this.handleNewsChange} className={`${styles.removeBorder}`}>
                     {newsSource.map((item, key) => <option value={Object.keys(item)[0]}>{item[Object.keys(item)[0]]}</option>)}
                   </select>
